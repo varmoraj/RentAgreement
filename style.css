@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
   padding: 20px;
-  background: #f2f2f2;
 }
 
 .container {
@@ -17,15 +17,31 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .form input {
   width: 100%;
-  padding: 6px;
+  padding: 8px;
   margin: 6px 0 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 14px;
+}
+
+.form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #2d7dd2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .preview-container {
@@ -33,18 +49,18 @@ body {
 }
 
 .preview {
-  width: 595px;
-  height: 842px;
-  padding: 40px;
+  width: 595px; /* A4 width in pt */
+  min-height: 842px; /* A4 height in pt */
   background: white;
+  padding: 40px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  border: 1px solid #ccc;
   color: black;
   font-size: 14px;
   line-height: 1.6;
+  border: 1px solid #ccc;
 }
 
-.input.red {
+.red {
   color: red;
   font-weight: bold;
 }
