@@ -2,30 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Live Rent Agreement PDF</title>
+  <title>Indian Rent Agreement Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <div class="form">
-      <h2>Enter Details</h2>
+      <h2>Enter Rent Agreement Details</h2>
       <label>Owner Name: <input type="text" id="ownerName" oninput="updatePreview()"></label>
       <label>Tenant Name: <input type="text" id="tenantName" oninput="updatePreview()"></label>
       <label>Property Address: <input type="text" id="propertyAddress" oninput="updatePreview()"></label>
-      <label>Rent Amount: <input type="text" id="rent" oninput="updatePreview()"></label>
+      <label>Rent Amount (INR): <input type="text" id="rent" oninput="updatePreview()"></label>
+      <label>Start Date: <input type="date" id="startDate" oninput="updatePreview()"></label>
+      <label>End Date: <input type="date" id="endDate" oninput="updatePreview()"></label>
       <button onclick="downloadPDF()">Download PDF</button>
     </div>
 
     <div class="preview-container">
       <div id="preview" class="preview">
-        <h1>RENT AGREEMENT</h1>
-        <p>This agreement is made between <span class="live" id="p_owner"></span> and <span class="live" id="p_tenant"></span>.</p>
-        <p>The property at <span class="live" id="p_address"></span> is rented for ₹<span class="live" id="p_rent"></span> per month.</p>
+        <h1 style="text-align: center;">RENT AGREEMENT</h1>
+        <p>This Rent Agreement is made on this <span class="input red" id="p_startDate">________</span> between <span class="input red" id="p_owner">________</span> (hereinafter called "Owner") residing at <span class="input red" id="p_ownerAddress">________</span> and <span class="input red" id="p_tenant">________</span> (hereinafter called "Tenant").</p>
+
+        <p>The Owner agrees to let out and the Tenant agrees to take on rent the property located at <span class="input red" id="p_address">________</span>.</p>
+
+        <p>1. The monthly rent shall be ₹<span class="input red" id="p_rent">________</span>.</p>
+        <p>2. The rent duration is from <span class="input red" id="p_startDate2">________</span> to <span class="input red" id="p_endDate">________</span>.</p>
+        <p>3. Tenant shall not sublet, transfer, or assign the rented premises.</p>
+        <p>4. Any damage to the property will be the responsibility of the tenant.</p>
+        <p>5. This agreement may be renewed with mutual consent before expiry.</p>
+
+        <p>IN WITNESS WHEREOF, both parties have signed this agreement on the date mentioned above.</p>
+
+        <br><br>
+        <p>Owner Signature: ____________________</p>
+        <p>Tenant Signature: ____________________</p>
       </div>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 </body>
 </html>
