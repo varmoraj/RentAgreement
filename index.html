@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Rent Agreement PDF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="form">
+      <h2>Enter Details</h2>
+      <label>Owner Name: <input type="text" id="ownerName" oninput="updatePreview()"></label>
+      <label>Tenant Name: <input type="text" id="tenantName" oninput="updatePreview()"></label>
+      <label>Property Address: <input type="text" id="propertyAddress" oninput="updatePreview()"></label>
+      <label>Rent Amount: <input type="text" id="rent" oninput="updatePreview()"></label>
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <div class="preview-container">
+      <div id="preview" class="preview">
+        <h1>RENT AGREEMENT</h1>
+        <p>This agreement is made between <span class="live" id="p_owner"></span> and <span class="live" id="p_tenant"></span>.</p>
+        <p>The property at <span class="live" id="p_address"></span> is rented for ₹<span class="live" id="p_rent"></span> per month.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
