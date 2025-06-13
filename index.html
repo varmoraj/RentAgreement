@@ -1,101 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rent Agreement Generator</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rent Agreement</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <div class="form">
-      <h2>Enter Rent Agreement Details</h2>
-      <label>Lessor Name: <input type="text" id="lessorName" oninput="updatePreview()"></label>
-      <label>Lessor Age & Address: <input type="text" id="lessorAddress" oninput="updatePreview()"></label>
-
-      <label>Lessee 1: <input type="text" id="lessee1" oninput="updatePreview()"></label>
-      <label>Lessee 1 Age & Address: <input type="text" id="lessee1Address" oninput="updatePreview()"></label>
-
-      <label>Lessee 2: <input type="text" id="lessee2" oninput="updatePreview()"></label>
-      <label>Lessee 2 Age & Address: <input type="text" id="lessee2Address" oninput="updatePreview()"></label>
-
-      <label>Lessee 3: <input type="text" id="lessee3" oninput="updatePreview()"></label>
-      <label>Lessee 3 Age & Address: <input type="text" id="lessee3Address" oninput="updatePreview()"></label>
-
-      <label>Office Address: <input type="text" id="officeAddress" oninput="updatePreview()"></label>
-      <label>Start Date: <input type="date" id="startDate" oninput="updatePreview()"></label>
-      <label>End Date: <input type="date" id="endDate" oninput="updatePreview()"></label>
-      <label>Rent Amount: <input type="text" id="rentAmount" oninput="updatePreview()"></label>
-      <button onclick="downloadPDF()">Download PDF</button>
+    <div class="form-section">
+      <h2>Agreement Details</h2>
+      <label>Lessor Name: <input type="text" id="lessorName" value="Mr. NIRAV ASHOK VADGAMA"/></label>
+      <label>Lessee 1: <input type="text" id="lessee1" value="Mr. KEYUR PONKIYA"/></label>
+      <label>Lessee 2: <input type="text" id="lessee2" value="Mr. ASHVINBHAI BABUBHAI SANKHAT"/></label>
+      <label>Lessee 3: <input type="text" id="lessee3" value="Mr. JIGAR MANHARBHAI VARMORA"/></label>
+      <label>Rent Amount: <input type="text" id="rentAmount" value="8000"/></label>
+      <label>Agreement Start Date: <input type="text" id="startDate" value="13-06-2025"/></label>
+      <label>Agreement End Date: <input type="text" id="endDate" value="12-05-2026"/></label>
+      <button onclick="window.print()">Download / Print</button>
     </div>
 
-    <div class="preview-container">
-      <div id="preview" class="preview">
-        <h1 style="text-align:center;">RENTAL AGREEMENT</h1>
-        <p>This agreement made at Morbi on this <span class="red" id="p_startDate"></span> between,</p>
+    <div class="preview-section" id="preview">
+      <h1>RENTAL AGREEMENT</h1>
+      <p>This agreement made at Morbi on this <b><span class="editable" id="previewStartDate"></span></b> between,</p>
 
-        <p><strong>Office Lessor:</strong> <span class="red" id="p_lessorName"></span></p>
-        <p>(First Party through its owner: -):-</p>
-        <p>1. <span class="red" id="p_lessorName2"></span>, <span class="red" id="p_lessorAddress"></span></p>
+      <p>Office Lessor <span class="editable" id="previewLessor"></span></p>
+      <p>Office Lessee through its Partners:</p>
+      <ul>
+        <li><span class="editable" id="previewLessee1"></span></li>
+        <li><span class="editable" id="previewLessee2"></span></li>
+        <li><span class="editable" id="previewLessee3"></span></li>
+      </ul>
 
-        <p><strong>Office Lessee J K PRIME ENTERPRISE</strong> (Second Party) through its Partners:</p>
-        <ul>
-          <li>1. <span class="red" id="p_lessee1"></span>, <span class="red" id="p_lessee1Address"></span></li>
-          <li>2. <span class="red" id="p_lessee2"></span>, <span class="red" id="p_lessee2Address"></span></li>
-          <li>3. <span class="red" id="p_lessee3"></span>, <span class="red" id="p_lessee3Address"></span></li>
-        </ul>
+      <p>The Office will be carried on Vagepar Survey No.919p, Plot No.3, Plot No.4, Plot No.5, Office No.2040, 2nd Floor, City Mall Nr. Sanala Bypass, Bhaktinagar Circle, Morbi-363641 / or at such other place or places, hereinafter referred to as the ‘LESSEE’ of the other part;</p>
 
-        <p>The Office will be carried on <span class="red" id="p_officeAddress"></span></p>
+      <p>WHEREAS the Lessor is the lawful owner of, and otherwise well sufficiently entitled to the above premises...</p>
 
-        <p>This lease is valid from <span class="red" id="p_startDate2"></span> to <span class="red" id="p_endDate"></span>.</p>
+      <p>AND WHEREAS at the request of the Lessee, the Lessor has agreed to let the said premises for a term of 11 Months commencing from <span class="editable" id="previewStartDate2"></span> to <span class="editable" id="previewEndDate"></span>.</p>
 
-        <p>WHEREAS the Lessor is the lawful owner and agrees to let the said premises for commercial office use, with an extent of 178-00 Sq. Ft.</p>
+      <hr>
+      <p><strong>Agreement Clauses:</strong></p>
+      <ul>
+        <li>Right to peaceful possession and enjoyment of the premises.</li>
+        <li>Lease valid for 11 months unless terminated earlier.</li>
+        <li>Lessee can terminate with 1 month’s notice.</li>
+        <li>No sub-letting or transfer without permission.</li>
+        <li>Only for business purposes related to interior design and turnkey projects.</li>
+        <li>Responsibility of Lessor to ensure working sanitary, water and electric fittings before handover.</li>
+        <li>No construction changes by Lessee allowed.</li>
+        <li>Minor repairs by Lessee, major structural by Lessor.</li>
+        <li>Entry allowed to Lessor for inspection with notice.</li>
+        <li>Monthly Rent is ₹<span class="editable" id="previewRentAmount"></span> INR to be paid on or before 1st of each month.</li>
+        <li>Lessee pays electricity, water, and maintenance bills.</li>
+        <li>Lessor pays property taxes.</li>
+        <li>Lessor allows Lessee to use property address for GST, PGVCL, Trademark, Udyam, etc. registration.</li>
+      </ul>
 
-        <ol>
-          <li>The Lessor grants the Lessee the right to use the said premises with fixtures listed in Annexure 1, enjoying peaceful possession.</li>
-          <li>Lease term is 11 months unless terminated earlier.</li>
-          <li>Lessee may terminate with 1 month's notice.</li>
-          <li>No sub-leasing or transferring of premises allowed.</li>
-          <li>Usage limited to business: interior design, turnkey projects with materials and labor.</li>
-          <li>Lessor ensures functional sanitary, water, and electrical systems at handover.</li>
-          <li>Lessee may install/remove own fittings responsibly.</li>
-          <li>Minor repairs borne by Lessee; major repairs by Lessor after notice or reimbursed if Lessee does it.</li>
-          <li>Inspection allowed by Lessor at mutually convenient times.</li>
-          <li>Lessee must maintain premises responsibly and return it in good condition.</li>
-          <li>Rent: ₹<span class="red" id="p_rentAmount"></span>/month payable in advance by 1st of each month.</li>
-          <li>If rent unpaid for 3 months or terms breached, Lessor may terminate lease after 15-day notice.</li>
-          <li>Lessee will pay actual charges for electricity, water, shared maintenance.</li>
-          <li>Lessor shall pay all statutory taxes and comply with rules during lease term.</li>
-          <li>Lessor permits business registration like GST, PGVCL, Udyam, etc. from this address.</li>
-        </ol>
+      <hr>
+      <p><strong>Witness:</strong></p>
+      <p>Signature: ______________________ Name & Address: _____________________________</p>
 
-        <p><strong>IN WITNESS WHEREOF</strong>, the parties hereto have set their hands on the above-mentioned date.</p>
-
-        <p><strong>Lessor:</strong> ____________________</p>
-        <p><strong>Lessee 1:</strong> ____________________</p>
-        <p><strong>Lessee 2:</strong> ____________________</p>
-        <p><strong>Lessee 3:</strong> ____________________</p>
-
-        <p><strong>Witnesses:</strong></p>
-        <p>1. Name & Address: _________________________  Signature: ________________</p>
-        <p>2. Name & Address: _________________________  Signature: ________________</p>
-
-        <hr>
-        <p><strong>Property Address:</strong> <span class="red" id="p_officeAddress2"></span></p>
-        <p><strong>Lessor:</strong> <span class="red" id="p_lessorName3"></span></p>
-        <p><strong>Lessee:</strong> <span class="red" id="p_lessee1b"></span>, <span class="red" id="p_lessee2b"></span>, <span class="red" id="p_lessee3b"></span> (J K PRIME ENTERPRISE PARTNERS)</p>
-
-        <p>:: Drafted by::<br>
+      <hr>
+      <p><strong>Drafted by:</strong><br>
         E&H FINCORP ASSOCIATES<br>
         OFFICE NO-428, CITY MALL,<br>
         BHAGTINAGAR CIRCLE,<br>
         MORBI-RAJKOT HIGHWAY,<br>
         MORBI-363641.<br>
-        Mo: 9737372333 / 8080796080</p>
-      </div>
+        Mo: 9737372333 / 8080796080
+      </p>
     </div>
   </div>
 
   <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 </body>
 </html>
